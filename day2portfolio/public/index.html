@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Portfolio of Munavir Rahman M - Electronics & Communication Engineering Student, IoT Automation Intern and Web Developer">
+<meta name="keywords" content="Munavir Rahman M, Portfolio, IoT, ESP32, Arduino, ECE, CUCEK, CUSAT">
+<meta name="author" content="Munavir Rahman M">
+
+<title>Munavir Rahman M | Portfolio</title>
+
+<style>
+
+:root{
+    --bg-color:#0f172a;
+    --card-bg:rgba(255,255,255,0.08);
+    --primary:#00bfff;
+    --secondary:#00ffff;
+    --text:#ffffff;
+    --muted:#b0b0b0;
+    --shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Segoe UI,sans-serif;
+    background:var(--bg-color);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:#00bfff;
+    filter:blur(250px);
+    opacity:.08;
+    top:-200px;
+    left:-200px;
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00ffff;
+    filter:blur(250px);
+    opacity:.08;
+    right:-150px;
+    bottom:-150px;
+    z-index:-1;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+}
+
+nav{
+    width:90%;
+    margin:15px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    padding:18px 30px;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 10%;
+}
+
+.hero-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero-content h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    line-height:1.1;
+}
+
+.hero-content h1 span{
+    color:var(--primary);
+}
+
+.hero-content p{
+    margin-top:20px;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.btns{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    margin-right:10px;
+    transition:.3s;
+}
+
+.primary-btn{
+    background:linear-gradient(45deg,var(--primary),var(--secondary));
+    color:white;
+}
+
+.secondary-btn{
+    border:1px solid var(--primary);
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.profile-card{
+    background:var(--card-bg);
+    backdrop-filter:blur(20px);
+    padding:40px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:var(--shadow);
+}
+
+.profile-image{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    border:4px solid var(--primary);
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:5rem;
+}
+
+.profile-card h2{
+    margin-top:20px;
+}
+
+.profile-card p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+.socials{
+    margin-top:20px;
+}
+
+.socials a{
+    color:white;
+    text-decoration:none;
+    margin:5px;
+}
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.section-title span{
+    color:var(--primary);
+}
+
+.section-subtitle{
+    text-align:center;
+    color:var(--muted);
+    margin-bottom:50px;
+}
+
+.glass{
+    background:var(--card-bg);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    padding:30px;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+}
+
+.about-grid p{
+    color:var(--muted);
+    line-height:1.9;
+}
+
+.tags{
+    margin-top:25px;
+}
+
+.tags span{
+    display:inline-block;
+    padding:10px 15px;
+    border-radius:30px;
+    background:rgba(0,191,255,.15);
+    margin:5px;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.skill-card{
+    background:var(--card-bg);
+    padding:30px;
+    border-radius:25px;
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+}
+
+.skill-card h3{
+    margin:15px 0;
+}
+
+.skill-card p{
+    color:var(--muted);
+}
+
+@media(max-width:900px){
+
+.hero-container,
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+.hero-content{
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:3rem;
+}
+
+nav ul{
+    display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+Munavir
+</div>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#projects">Projects</a></li>
+
+<li><a href="#internship">Internship</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-container">
+
+<div class="hero-content">
+
+<h3>Hello, I'm</h3>
+
+<h1>
+Munavir
+<span>Rahman M</span>
+</h1>
+
+<p>
+Electronics & Communication Engineering Student at
+CUCEK under CUSAT, IoT Automation Intern,
+Web Developer, Technology Enthusiast and Singer
+from Malappuram, Kerala.
+</p>
+
+<div class="btns">
+
+<a href="#contact" class="btn primary-btn">
+Contact Me
+</a>
+
+<a href="#projects" class="btn secondary-btn">
+View Projects
+</a>
+
+</div>
+
+</div>
+
+<div class="profile-card">
+
+<div class="profile-image">
+M
+</div>
+
+<h2>Munavir Rahman M</h2>
+
+<p>
+ECE Student • IoT Automation Intern
+</p>
+
+<div class="socials">
+
+<a href="https://github.com/munavirrahman">
+GitHub
+</a>
+
+|
+
+<a href="https://www.linkedin.com/in/munavir-rahman-574016379">
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">
+About <span>Me</span>
+</h2>
+
+<p class="section-subtitle">
+Passionate about IoT, Embedded Systems,
+Automation and Modern Web Development.
+</p>
+
+<div class="about-grid">
+
+<div class="glass">
+
+<h3>Professional Summary</h3>
+
+<br>
+
+<p>
+I am Munavir Rahman M, a B.Tech Electronics &
+Communication Engineering student studying at
+CUCEK under CUSAT. I am currently entering my
+second year and actively working on IoT
+Automation Internship projects involving
+microcontrollers, sensors and smart systems.
+</p>
+
+<br>
+
+<p>
+My goal is to build innovative solutions that
+combine electronics, embedded systems,
+automation and software development.
+</p>
+
+<div class="tags">
+
+<span>Electronics</span>
+<span>IoT</span>
+<span>ESP32</span>
+<span>Arduino</span>
+<span>Automation</span>
+<span>Web Development</span>
+<span>Robotics</span>
+<span>Open Source</span>
+
+</div>
+
+</div>
+
+<div class="glass">
+
+<h3>Education</h3>
+
+<br>
+
+<p>
+B.Tech Electronics &
+Communication Engineering
+</p>
+
+<br>
+
+<p>
+CUCEK (CUSAT)
+</p>
+
+<br>
+
+<p>
+2025 - 2029
+</p>
+
+<br>
+
+<p>
+Currently Entering
+Second Year
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">
+Technical <span>Skills</span>
+</h2>
+
+<p class="section-subtitle">
+Technologies and tools I use and learn.
+</p>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>C Programming</h3>
+<p>Programming fundamentals and problem solving.</p>
+</div>
+
+<div class="skill-card">
+<h3>Python</h3>
+<p>Automation, scripting and development.</p>
+</div>
+
+<div class="skill-card">
+<h3>HTML</h3>
+<p>Semantic and SEO-friendly websites.</p>
+</div>
+
+<div class="skill-card">
+<h3>CSS</h3>
+<p>Responsive and modern UI design.</p>
+</div>
+
+<div class="skill-card">
+<h3>Git & GitHub</h3>
+<p>Version control and collaboration.</p>
+</div>
+
+<div class="skill-card">
+<h3>Arduino</h3>
+<p>Microcontroller based embedded projects.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">
+Featured <span>Projects</span>
+</h2>
+
+<p class="section-subtitle">
+A collection of academic, web and IoT based projects.
+</p>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+
+<h3>IoT Temperature Monitoring System</h3>
+
+<p>
+ESP32 based smart monitoring system capable of collecting
+temperature data and sending it to cloud platforms for
+real-time monitoring.
+</p>
+
+<br>
+
+<div class="tags">
+<span>ESP32</span>
+<span>IoT</span>
+<span>Sensors</span>
+<span>Cloud</span>
+</div>
+
+<br>
+
+<a href="https://github.com/munavirrahman" class="btn primary-btn">
+GitHub
+</a>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Smart Home Automation</h3>
+
+<p>
+Control appliances remotely using Wi-Fi enabled
+microcontrollers and automation logic.
+</p>
+
+<br>
+
+<div class="tags">
+<span>ESP32</span>
+<span>Relay</span>
+<span>WiFi</span>
+<span>Automation</span>
+</div>
+
+<br>
+
+<a href="https://github.com/munavirrahman" class="btn primary-btn">
+GitHub
+</a>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Portfolio Website</h3>
+
+<p>
+Modern responsive portfolio website developed
+using HTML, CSS and JavaScript.
+</p>
+
+<br>
+
+<div class="tags">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+</div>
+
+<br>
+
+<a href="https://github.com/munavirrahman" class="btn primary-btn">
+GitHub
+</a>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Weather Dashboard</h3>
+
+<p>
+Responsive weather information dashboard design
+with modern UI concepts.
+</p>
+
+<br>
+
+<div class="tags">
+<span>UI</span>
+<span>Dashboard</span>
+<span>Responsive</span>
+</div>
+
+<br>
+
+<a href="https://github.com/munavirrahman" class="btn primary-btn">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="internship">
+
+<h2 class="section-title">
+IoT <span>Internship</span>
+</h2>
+
+<p class="section-subtitle">
+Practical experience gained through IoT Automation projects.
+</p>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+
+<h3>ESP32 Temperature Monitoring</h3>
+
+<p>
+Development of smart monitoring systems using ESP32,
+sensors and wireless communication technologies.
+</p>
+
+<div class="tags">
+<span>ESP32</span>
+<span>NTC Sensor</span>
+<span>Cloud Logging</span>
+</div>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Smart Sensor Dashboard</h3>
+
+<p>
+Collection and visualization of sensor data using
+embedded systems and dashboards.
+</p>
+
+<div class="tags">
+<span>Arduino</span>
+<span>Sensors</span>
+<span>Dashboard</span>
+</div>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Home Automation System</h3>
+
+<p>
+Automation of household appliances using relays,
+wireless communication and embedded controllers.
+</p>
+
+<div class="tags">
+<span>ESP32</span>
+<span>Automation</span>
+<span>Relay</span>
+</div>
+
+</div>
+
+<div class="skill-card">
+
+<h3>PCB Design Project</h3>
+
+<p>
+Designing schematic diagrams and PCB layouts
+for embedded applications.
+</p>
+
+<div class="tags">
+<span>KiCad</span>
+<span>PCB</span>
+<span>Electronics</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="timeline">
+
+<h2 class="section-title">
+Education <span>Timeline</span>
+</h2>
+
+<p class="section-subtitle">
+Important milestones in my academic journey.
+</p>
+
+<div class="glass">
+
+<div style="border-left:4px solid var(--primary);padding-left:25px;">
+
+<div style="margin-bottom:40px;">
+<h3>Higher Secondary Education</h3>
+<p>Completed higher secondary studies and developed interest in technology.</p>
+</div>
+
+<div style="margin-bottom:40px;">
+<h3>Admission to CUCEK</h3>
+<p>Started B.Tech Electronics & Communication Engineering under CUSAT.</p>
+</div>
+
+<div style="margin-bottom:40px;">
+<h3>First Year Engineering</h3>
+<p>Built strong foundations in engineering and programming.</p>
+</div>
+
+<div style="margin-bottom:40px;">
+<h3>IoT Automation Internship</h3>
+<p>Worked on practical IoT and automation based systems.</p>
+</div>
+
+<div>
+<h3>Entering Second Year</h3>
+<p>Expanding knowledge in embedded systems and modern technologies.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="certifications">
+
+<h2 class="section-title">
+Certifications & <span>Learning</span>
+</h2>
+
+<p class="section-subtitle">
+Courses and certifications that support my technical growth.
+</p>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>Python Programming</h3>
+<p>Programming fundamentals, problem solving and scripting.</p>
+<p><strong>Year:</strong> 2025-2026</p>
+</div>
+
+<div class="skill-card">
+<h3>IoT Fundamentals</h3>
+<p>Connected devices, sensors and embedded communication.</p>
+<p><strong>Year:</strong> 2026</p>
+</div>
+
+<div class="skill-card">
+<h3>Git & GitHub</h3>
+<p>Version control, repositories and collaborative development.</p>
+<p><strong>Year:</strong> 2026</p>
+</div>
+
+<div class="skill-card">
+<h3>Web Development</h3>
+<p>Modern responsive website design and deployment.</p>
+<p><strong>Year:</strong> 2026</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="github-stats">
+
+<h2 class="section-title">
+GitHub <span>Statistics</span>
+</h2>
+
+<p class="section-subtitle">
+A quick overview of my learning and development journey.
+</p>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h2>10+</h2>
+<h3>Repositories</h3>
+<p>Projects and learning repositories hosted on GitHub.</p>
+</div>
+
+<div class="skill-card">
+<h2>15+</h2>
+<h3>Technologies</h3>
+<p>Programming, web and electronics related technologies.</p>
+</div>
+
+<div class="skill-card">
+<h2>8+</h2>
+<h3>Projects</h3>
+<p>Academic, IoT and web development projects.</p>
+</div>
+
+<div class="skill-card">
+<h2>2nd Year</h2>
+<h3>Academic Level</h3>
+<p>B.Tech Electronics & Communication Engineering.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="achievements">
+
+<h2 class="section-title">
+Activities & <span>Interests</span>
+</h2>
+
+<p class="section-subtitle">
+Beyond academics and technology.
+</p>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>🎤 Singer</h3>
+<p>
+Passionate about music and stage performances.
+</p>
+</div>
+
+<div class="skill-card">
+<h3>💻 Web Development</h3>
+<p>
+Building modern and responsive web applications.
+</p>
+</div>
+
+<div class="skill-card">
+<h3>🔧 IoT Projects</h3>
+<p>
+Developing smart embedded and automation solutions.
+</p>
+</div>
+
+<div class="skill-card">
+<h3>📚 Continuous Learning</h3>
+<p>
+Always exploring new technologies and engineering concepts.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">
+Contact <span>Me</span>
+</h2>
+
+<p class="section-subtitle">
+Let's connect and build something meaningful together.
+</p>
+
+<div class="about-grid">
+
+<div class="glass">
+
+<h3>Contact Information</h3>
+
+<br>
+
+<p>
+<strong>Email:</strong><br>
+munavirrahman2107@gmail.com
+</p>
+
+<br>
+
+<p>
+<strong>Location:</strong><br>
+Malappuram, Kerala, India
+</p>
+
+<br>
+
+<p>
+<strong>GitHub:</strong><br>
+https://github.com/munavirrahman
+</p>
+
+<br>
+
+<p>
+<strong>LinkedIn:</strong><br>
+https://www.linkedin.com/in/munavir-rahman-574016379
+</p>
+
+<br>
+
+<p>
+<strong>Instagram:</strong><br>
+_muna_vir._
+</p>
+
+<br>
+
+<p>
+<strong>Instagram (Personal):</strong><br>
+_.munavir_pvt
+</p>
+
+</div>
+
+<div class="glass">
+
+<h3>Send a Message</h3>
+
+<br>
+
+<form>
+
+<input type="text"
+placeholder="Full Name"
+style="width:100%;padding:14px;margin-bottom:15px;border:none;border-radius:10px;background:#1e293b;color:white;">
+
+<input type="email"
+placeholder="Email Address"
+style="width:100%;padding:14px;margin-bottom:15px;border:none;border-radius:10px;background:#1e293b;color:white;">
+
+<input type="text"
+placeholder="Subject"
+style="width:100%;padding:14px;margin-bottom:15px;border:none;border-radius:10px;background:#1e293b;color:white;">
+
+<textarea
+placeholder="Message"
+rows="6"
+style="width:100%;padding:14px;margin-bottom:15px;border:none;border-radius:10px;background:#1e293b;color:white;"></textarea>
+
+<button
+type="submit"
+class="btn primary-btn">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="glass">
+
+<h2 style="margin-bottom:20px;">
+Munavir Rahman M
+</h2>
+
+<p style="color:var(--muted);max-width:700px;margin:auto;">
+Electronics & Communication Engineering Student,
+IoT Automation Intern, Web Developer and Technology Enthusiast.
+Passionate about building innovative solutions using electronics,
+embedded systems and modern web technologies.
+</p>
+
+<br>
+
+<div class="tags" style="justify-content:center;text-align:center;">
+
+<span>ECE</span>
+<span>IoT</span>
+<span>ESP32</span>
+<span>Arduino</span>
+<span>Automation</span>
+<span>Web Development</span>
+
+</div>
+
+<br>
+
+<div style="text-align:center;">
+
+<a href="https://github.com/munavirrahman"
+class="btn primary-btn"
+target="_blank">
+GitHub
+</a>
+
+<a href="https://www.linkedin.com/in/munavir-rahman-574016379"
+class="btn secondary-btn"
+target="_blank">
+LinkedIn
+</a>
+
+</div>
+
+<br>
+
+<p style="text-align:center;color:var(--muted);">
+© 2026 Munavir Rahman M. All Rights Reserved.
+</p>
+
+<br>
+
+<p style="text-align:center;">
+<a href="#"
+style="color:var(--primary);text-decoration:none;">
+⬆ Back To Top
+</a>
+</p>
+
+</div>
+
+</footer>
+
+<style>
+
+/* EXTRA PREMIUM EFFECTS */
+
+.skill-card{
+position:relative;
+overflow:hidden;
+}
+
+.skill-card::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.08),
+transparent
+);
+transition:.8s;
+}
+
+.skill-card:hover::before{
+left:100%;
+}
+
+.glass{
+box-shadow:
+0 8px 32px rgba(0,0,0,.25),
+0 0 25px rgba(0,191,255,.08);
+}
+
+.profile-card{
+transition:.4s;
+}
+
+.profile-card:hover{
+transform:translateY(-10px);
+}
+
+.profile-image{
+background:
+linear-gradient(
+135deg,
+rgba(0,191,255,.2),
+rgba(0,255,255,.1)
+);
+}
+
+.section-title{
+position:relative;
+}
+
+.section-title::after{
+content:'';
+display:block;
+width:80px;
+height:4px;
+background:var(--primary);
+margin:15px auto 0;
+border-radius:50px;
+}
+
+footer{
+padding:80px 10%;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+</style>
+
+<script>
+
+/* SIMPLE REVEAL EFFECT */
+
+const cards =
+document.querySelectorAll(
+'.skill-card,.glass,.profile-card'
+);
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity='1';
+entry.target.style.transform='translateY(0px)';
+
+}
+
+});
+
+},{
+threshold:0.1
+});
+
+cards.forEach(card=>{
+
+card.style.opacity='0';
+card.style.transform='translateY(40px)';
+card.style.transition='0.8s';
+
+observer.observe(card);
+
+});
+
+</script>
+
+<style>
+    <style>
+
+/* ===== PORTFOLIO UPGRADE PACK ===== */
+
+.profile-card{
+    animation: floatCard 5s ease-in-out infinite !important;
+}
+
+@keyframes floatCard{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
+}
+
+.hero-content h1{
+    animation: heroGlow 3s infinite alternate !important;
+}
+
+@keyframes heroGlow{
+    from{
+        text-shadow:0 0 10px #00bfff;
+    }
+    to{
+        text-shadow:
+        0 0 20px #00bfff,
+        0 0 40px #00ffff;
+    }
+}
+
+.primary-btn{
+    box-shadow:0 0 20px rgba(0,191,255,.5) !important;
+}
+
+.primary-btn:hover{
+    transform:translateY(-5px) scale(1.05) !important;
+    box-shadow:0 0 35px rgba(0,255,255,.8) !important;
+}
+
+.skill-card{
+    transition:0.4s !important;
+}
+
+.skill-card:hover{
+    transform:translateY(-12px) scale(1.03) !important;
+}
+
+body{
+    background:
+    linear-gradient(
+    -45deg,
+    #0f172a,
+    #111827,
+    #0b1220,
+    #0f172a
+    ) !important;
+
+    background-size:400% 400% !important;
+    animation:bgAnimation 12s ease infinite !important;
+}
+
+@keyframes bgAnimation{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.logo{
+    animation:logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow{
+    from{
+        text-shadow:0 0 5px #00bfff;
+    }
+    to{
+        text-shadow:
+        0 0 15px #00bfff,
+        0 0 25px #00ffff;
+    }
+}
+
+</style>
+<!-- SOCIAL LINKS -->
+
+<div class="social-floating">
+    <a href="https://www.instagram.com/_muna_vir._?igsh=dW5yOWZpM3luYmxw" target="_blank">Instagram</a>
+
+    <a href="https://www.instagram.com/_.munavir_pvt?igsh=c3A3Z3A5dDgwb3U3" target="_blank">Instagram 2</a>
+
+    <a href="https://www.linkedin.com/in/munavir-rahman-574016379" target="_blank">LinkedIn</a>
+
+    <a href="https://github.com/munavirrahman" target="_blank">GitHub</a>
+</div>
+
+<style>
+
+.social-floating{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    z-index:9999;
+}
+
+.social-floating a{
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:12px;
+    color:white;
+    background:linear-gradient(45deg,#00bfff,#00ffff);
+    box-shadow:0 0 15px rgba(0,191,255,.5);
+    transition:.3s;
+    font-weight:600;
+}
+
+.social-floating a:hover{
+    transform:translateY(-4px) scale(1.05);
+    box-shadow:0 0 25px rgba(0,255,255,.8);
+}
+
+</style>
+<!-- ===== PREMIUM SOCIAL SYSTEM (SINGLE FILE VERSION) ===== -->
+<style>
+/* ===== PREMIUM UI ===== */
+.premium-social-section{
+  margin-top: 60px;
+  text-align: center;
+  padding: 30px 10px;
+  font-family: Arial, sans-serif;
+}
+
+.premium-title{
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg,#ff512f,#dd2476,#24c6dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* GRID */
+.social-grid{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.premium-card{
+  width: 135px;
+  padding: 18px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: #111;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* gradient glow */
+.premium-card::before{
+  content:"";
+  position:absolute;
+  inset:-50%;
+  background: var(--grad);
+  opacity:0;
+  transition:0.4s;
+}
+
+.premium-card:hover::before{
+  opacity:0.25;
+}
+
+.premium-card:hover{
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* ICON */
+.icon-box{
+  width: 55px;
+  height: 55px;
+  margin: auto;
+  border-radius: 50%;
+  background: #fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:10px;
+}
+
+.icon-box img{
+  width: 30px;
+  height: 30px;
+}
+
+.premium-card span{
+  font-weight:600;
+}
+
+/* FLOATING DOCK */
+.floating-dock{
+  position: fixed;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.floating-dock a{
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 20px;
+  text-decoration:none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+
+.floating-dock a:hover{
+  transform: scale(1.15);
+}
+
+/* RIPPLE */
+.ripple-effect{
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  animation: ripple 0.6s linear;
+  pointer-events:none;
+  z-index: 9999;
+}
+
+@keyframes ripple{
+  from { transform: scale(1); opacity: 0.6; }
+  to { transform: scale(20); opacity: 0; }
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .floating-dock{
+    left: 10px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ===== CREATE OR FIND SECTION =====
+  let grid = document.querySelector(".social-grid");
+
+  if (!grid) {
+    const section = document.createElement("section");
+    section.className = "premium-social-section";
+
+    const title = document.createElement("h2");
+    title.className = "premium-title";
+    title.textContent = "Connect With Me";
+
+    grid = document.createElement("div");
+    grid.className = "social-grid";
+
+    section.appendChild(title);
+    section.appendChild(grid);
+    document.body.appendChild(section);
+  }
+
+  // ===== REMOVE DUPLICATES =====
+  function removeDup(keyword){
+    document.querySelectorAll(".premium-card").forEach(el=>{
+      if(el.href && el.href.includes(keyword)) el.remove();
+    });
+  }
+
+  // ===== ADD CARD =====
+  function add(name, url, icon, grad){
+    removeDup(url);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.className = "premium-card ripple";
+    a.style.setProperty("--grad", grad);
+
+    a.innerHTML = `
+      <div class="icon-box">
+        <img src="${icon}">
+      </div>
+      <span>${name}</span>
+    `;
+
+    grid.appendChild(a);
+  }
+
+  // ===== YOUR LINKS =====
+  add("Instagram",
+    "https://www.instagram.com/_muna_vir._?igsh=dW5yOWZpM3luYmxw",
+    "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
+    "linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7)"
+  );
+
+  add("Private IG",
+    "https://www.instagram.com/_.munavir_pvt?igsh=c3A3Z3A5dDgwb3U3",
+    "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
+    "linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)"
+  );
+
+  add("Email",
+    "mailto:munavirrahman2107@gmail.com",
+    "https://cdn-icons-png.flaticon.com/512/561/561127.png",
+    "linear-gradient(135deg,#00c6ff,#0072ff)"
+  );
+
+});
+
+// ===== FLOATING DOCK =====
+document.body.insertAdjacentHTML("beforeend", `
+<div class="floating-dock">
+  <a href="https://www.instagram.com/_muna_vir._?igsh=dW5yOWZpM3luYmxw">📸</a>
+  <a href="mailto:munavirrahman2107@gmail.com">✉️</a>
+</div>
+`);
+
+// ===== RIPPLE EFFECT =====
+document.addEventListener("click", function(e){
+  const r = document.createElement("span");
+  r.className = "ripple-effect";
+  r.style.left = e.clientX + "px";
+  r.style.top = e.clientY + "px";
+  document.body.appendChild(r);
+  setTimeout(()=>r.remove(),600);
+});
+</script>
+
+</body>
+</html>
