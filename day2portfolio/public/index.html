@@ -536,7 +536,6 @@ Technologies and tools I use and learn.
 </div>
 
 </section>
-
 <section id="projects">
 
 <h2 class="section-title">
@@ -784,7 +783,6 @@ Important milestones in my academic journey.
 </div>
 
 </section>
-
 <section id="certifications">
 
 <h2 class="section-title">
@@ -1187,358 +1185,167 @@ observer.observe(card);
 });
 
 </script>
+<!-- ================= CONNECT + THEME + ANIMATION UPGRADE ================= -->
 
 <style>
-    <style>
 
-/* ===== PORTFOLIO UPGRADE PACK ===== */
-
-.profile-card{
-    animation: floatCard 5s ease-in-out infinite !important;
+/* ================= THEME SYSTEM ================= */
+:root{
+  --bg:#0b1220;
+  --card:#111827;
+  --text:#ffffff;
+  --accent:#7c3aed;
 }
 
-@keyframes floatCard{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
-    100%{transform:translateY(0);}
-}
-
-.hero-content h1{
-    animation: heroGlow 3s infinite alternate !important;
-}
-
-@keyframes heroGlow{
-    from{
-        text-shadow:0 0 10px #00bfff;
-    }
-    to{
-        text-shadow:
-        0 0 20px #00bfff,
-        0 0 40px #00ffff;
-    }
-}
-
-.primary-btn{
-    box-shadow:0 0 20px rgba(0,191,255,.5) !important;
-}
-
-.primary-btn:hover{
-    transform:translateY(-5px) scale(1.05) !important;
-    box-shadow:0 0 35px rgba(0,255,255,.8) !important;
-}
-
-.skill-card{
-    transition:0.4s !important;
-}
-
-.skill-card:hover{
-    transform:translateY(-12px) scale(1.03) !important;
+body.light{
+  --bg:#f5f7ff;
+  --card:#ffffff;
+  --text:#111;
+  --accent:#2563eb;
 }
 
 body{
-    background:
-    linear-gradient(
-    -45deg,
-    #0f172a,
-    #111827,
-    #0b1220,
-    #0f172a
-    ) !important;
-
-    background-size:400% 400% !important;
-    animation:bgAnimation 12s ease infinite !important;
+  background:var(--bg);
+  color:var(--text);
+  transition:0.4s ease;
+  font-family:Arial, sans-serif;
 }
 
-@keyframes bgAnimation{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+/* ================= CONNECT SECTION ================= */
+.connect-section{
+  text-align:center;
+  padding:50px 20px;
 }
 
-.logo{
-    animation:logoGlow 2s infinite alternate;
+.connect-title{
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:20px;
 }
 
-@keyframes logoGlow{
-    from{
-        text-shadow:0 0 5px #00bfff;
-    }
-    to{
-        text-shadow:
-        0 0 15px #00bfff,
-        0 0 25px #00ffff;
-    }
+/* ICON ROW */
+.icon-row{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
 }
 
-</style>
-<!-- SOCIAL LINKS -->
-
-<div class="social-floating">
-    <a href="https://www.instagram.com/_muna_vir._?igsh=dW5yOWZpM3luYmxw" target="_blank">Instagram</a>
-
-    <a href="https://www.instagram.com/_.munavir_pvt?igsh=c3A3Z3A5dDgwb3U3" target="_blank">Instagram 2</a>
-
-    <a href="https://www.linkedin.com/in/munavir-rahman-574016379" target="_blank">LinkedIn</a>
-
-    <a href="https://github.com/munavirrahman" target="_blank">GitHub</a>
-</div>
-
-<style>
-
-.social-floating{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    z-index:9999;
+/* ICON BUTTON */
+.icon-row a{
+  width:60px;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:var(--card);
+  transition:0.3s ease;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
-.social-floating a{
-    text-decoration:none;
-    padding:12px 18px;
-    border-radius:12px;
-    color:white;
-    background:linear-gradient(45deg,#00bfff,#00ffff);
-    box-shadow:0 0 15px rgba(0,191,255,.5);
-    transition:.3s;
-    font-weight:600;
+/* HOVER */
+.icon-row a:hover{
+  transform:translateY(-6px) scale(1.1);
+  background:var(--accent);
 }
 
-.social-floating a:hover{
-    transform:translateY(-4px) scale(1.05);
-    box-shadow:0 0 25px rgba(0,255,255,.8);
+/* ICON IMAGE */
+.icon-row img{
+  width:28px;
+  height:28px;
 }
 
-</style>
-<!-- ===== PREMIUM SOCIAL SYSTEM (SINGLE FILE VERSION) ===== -->
-<style>
-/* ===== PREMIUM UI ===== */
-.premium-social-section{
-  margin-top: 60px;
-  text-align: center;
-  padding: 30px 10px;
-  font-family: Arial, sans-serif;
-}
-
-.premium-title{
-  font-size: 30px;
-  font-weight: 800;
-  margin-bottom: 25px;
-  background: linear-gradient(90deg,#ff512f,#dd2476,#24c6dc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* GRID */
-.social-grid{
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-/* CARD */
-.premium-card{
-  width: 135px;
-  padding: 18px;
-  border-radius: 18px;
-  text-decoration: none;
-  color: #111;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.25);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* gradient glow */
-.premium-card::before{
-  content:"";
-  position:absolute;
-  inset:-50%;
-  background: var(--grad);
+/* ================= NAME ANIMATION ================= */
+.animated-name{
+  margin-top:25px;
+  font-size:22px;
+  font-weight:700;
   opacity:0;
-  transition:0.4s;
+  animation:fadeUp 1.2s ease forwards;
 }
 
-.premium-card:hover::before{
-  opacity:0.25;
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(15px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
-.premium-card:hover{
-  transform: translateY(-10px) scale(1.05);
+/* ================= THEME BUTTON ================= */
+.theme-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:10px 14px;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  background:var(--accent);
+  color:white;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* ICON */
-.icon-box{
-  width: 55px;
-  height: 55px;
-  margin: auto;
-  border-radius: 50%;
-  background: #fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:10px;
-}
-
-.icon-box img{
-  width: 30px;
-  height: 30px;
-}
-
-.premium-card span{
-  font-weight:600;
-}
-
-/* FLOATING DOCK */
-.floating-dock{
-  position: fixed;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 999;
-}
-
-.floating-dock a{
-  width: 45px;
-  height: 45px;
-  background: white;
-  border-radius: 50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size: 20px;
-  text-decoration:none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  transition:0.3s;
-}
-
-.floating-dock a:hover{
-  transform: scale(1.15);
-}
-
-/* RIPPLE */
-.ripple-effect{
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background: rgba(0,0,0,0.25);
-  border-radius: 50%;
-  transform: translate(-50%,-50%);
-  animation: ripple 0.6s linear;
-  pointer-events:none;
-  z-index: 9999;
-}
-
-@keyframes ripple{
-  from { transform: scale(1); opacity: 0.6; }
-  to { transform: scale(20); opacity: 0; }
-}
-
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media(max-width:600px){
-  .floating-dock{
-    left: 10px;
+  .icon-row{
+    gap:12px;
   }
 }
+
 </style>
+
+<!-- ================= CONNECT SECTION ================= -->
+<div class="connect-section">
+
+  <div class="connect-title">Connect With Me</div>
+
+  <div class="icon-row">
+
+    <!-- GitHub -->
+    <a href="https://github.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://linkedin.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
+    </a>
+
+    <!-- Instagram MAIN -->
+    <a href="https://www.instagram.com/_muna_vir._?igsh=dW5yOWZpM3luYmxw" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+    </a>
+
+    <!-- Instagram PRIVATE -->
+    <a href="https://www.instagram.com/_.munavir_pvt?igsh=c3A3Z3A5dDgwb3U3" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+    </a>
+
+    <!-- EMAIL -->
+    <a href="mailto:munavirrahman2107@gmail.com">
+      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+    </a>
+
+  </div>
+
+  <!-- ANIMATED NAME -->
+  <div class="animated-name">
+    Munavir Rahman M
+  </div>
+
+</div>
+
+<!-- ================= THEME BUTTON ================= -->
+<button class="theme-btn" onclick="toggleTheme()">Theme</button>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
 
-  // ===== CREATE OR FIND SECTION =====
-  let grid = document.querySelector(".social-grid");
+/* ================= THEME TOGGLE ================= */
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
 
-  if (!grid) {
-    const section = document.createElement("section");
-    section.className = "premium-social-section";
-
-    const title = document.createElement("h2");
-    title.className = "premium-title";
-    title.textContent = "Connect With Me";
-
-    grid = document.createElement("div");
-    grid.className = "social-grid";
-
-    section.appendChild(title);
-    section.appendChild(grid);
-    document.body.appendChild(section);
-  }
-
-  // ===== REMOVE DUPLICATES =====
-  function removeDup(keyword){
-    document.querySelectorAll(".premium-card").forEach(el=>{
-      if(el.href && el.href.includes(keyword)) el.remove();
-    });
-  }
-
-  // ===== ADD CARD =====
-  function add(name, url, icon, grad){
-    removeDup(url);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.target = "_blank";
-    a.className = "premium-card ripple";
-    a.style.setProperty("--grad", grad);
-
-    a.innerHTML = `
-      <div class="icon-box">
-        <img src="${icon}">
-      </div>
-      <span>${name}</span>
-    `;
-
-    grid.appendChild(a);
-  }
-
-  // ===== YOUR LINKS =====
-  add("Instagram",
-    "https://www.instagram.com/_muna_vir._?igsh=dW5yOWZpM3luYmxw",
-    "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-    "linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7)"
-  );
-
-  add("Private IG",
-    "https://www.instagram.com/_.munavir_pvt?igsh=c3A3Z3A5dDgwb3U3",
-    "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-    "linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)"
-  );
-
-  add("Email",
-    "mailto:munavirrahman2107@gmail.com",
-    "https://cdn-icons-png.flaticon.com/512/561/561127.png",
-    "linear-gradient(135deg,#00c6ff,#0072ff)"
-  );
-
-});
-
-// ===== FLOATING DOCK =====
-document.body.insertAdjacentHTML("beforeend", `
-<div class="floating-dock">
-  <a href="https://www.instagram.com/_muna_vir._?igsh=dW5yOWZpM3luYmxw">📸</a>
-  <a href="mailto:munavirrahman2107@gmail.com">✉️</a>
-</div>
-`);
-
-// ===== RIPPLE EFFECT =====
-document.addEventListener("click", function(e){
-  const r = document.createElement("span");
-  r.className = "ripple-effect";
-  r.style.left = e.clientX + "px";
-  r.style.top = e.clientY + "px";
-  document.body.appendChild(r);
-  setTimeout(()=>r.remove(),600);
-});
 </script>
 
 </body>
 </html>
+
