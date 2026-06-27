@@ -1,1 +1,1 @@
-# geck-internship-
+# gcek-internship-
